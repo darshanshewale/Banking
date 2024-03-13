@@ -1,0 +1,307 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: #444;
+  background-color: #f3f3f3;
+  height: 100vh;
+  padding: 2rem;
+}
+
+nav {
+  display: flex;
+
+  /* this will provide space between image login text and form */
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.welcome {
+  font-size: 1.9rem;
+  font-weight: 500;
+}
+
+.logo {
+  height: 5.25rem;
+}
+.login {
+  display: flex;
+}
+
+.login_input {
+  padding: 0.5rem 2rem;
+  font-size: 1.6rem;
+  font-family: inherit;
+  text-align: center;
+  width: 12rem;
+  border-radius: 10rem;
+  margin-right: 1rem;
+  color: black;
+  border: 1px solid black;
+  transition: all 0.3s;
+}
+
+/* as button got focus border changes to white  */
+.login_input:focus {
+  outline: none;
+  border: 1px solid #ccc;
+}
+/* placeholder text is dark to make good */
+.login_input::placeholder {
+  color: #bbb;
+}
+
+.login_btn {
+  border: none;
+  background: none;
+  font-size: 2.2rem;
+  color: inherit;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.login_btn:hover,
+.login_btn:focus,
+.btn--sort:hover,
+.btn--sort:focus {
+  outline: none;
+  color: #777;
+}
+
+.app {
+  position: relative;
+  max-width: 100rem;
+  margin: 4rem auto;
+  display: grid;
+  /* divided for 4 to transaction history and 3 for operation */
+  grid-template-columns: 4fr 3fr;
+  grid-template-rows: auto repeat(3, 15rem) auto;
+  gap: 2rem;
+
+  /* this will be used after login to visible the user banking details */
+  opacity: 0;
+  transition: all 1s;
+}
+
+.balance {
+  /* the current balance and date will consider 2 fr */
+  grid-column: 1 / span 2;
+  display: flex;
+  align-items: center;
+  /* this will provide as space in between current balance and date  */
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+/* applies to current balance label */
+.balance_label {
+  font-size: 2.2rem;
+  font-weight: 500;
+  margin-bottom: 0.2rem;
+}
+/* applies to current balance date */
+.balance_date {
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+/* applies to current balance value */
+.balance_value {
+  font-size: 4.5rem;
+  font-weight: 400;
+}
+
+.movements {
+  /* the transaction takes place from 2nd row to 3rd */
+  grid-row: 2 / span 3;
+  background-color: #fff;
+  border-radius: 1rem;
+  overflow: scroll;
+}
+
+.movements_row {
+  /* this will be row for each tansaction history  */
+  padding: 2.25rem 4rem;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+
+/* applies to transaction type */
+.movements_type {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #fff;
+  padding: 0.1rem 1rem;
+  border-radius: 10rem;
+  margin-right: 2rem;
+}
+
+/* applies to transaction Date */
+.movements_date {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #666;
+}
+
+/* applies to transaction Value */
+.movements_value {
+  font-size: 1.7rem;
+  margin-left: auto;
+}
+
+/* background for deposit type of transaction  */
+.movements_type_deposit {
+  background-image: linear-gradient(to top left, #39b385, #9be15d);
+}
+
+/* background for withdrawal type of transaction   */
+.movements_type_withdrawal {
+  background-image: linear-gradient(to top left, #e52a5a, #ff585f);
+}
+
+/* applies to each all operations */
+.operation {
+  border-radius: 1rem;
+  padding: 3rem 4rem;
+  color: #333;
+}
+/* background for transfer Operation */
+.operation_transfer {
+  background-image: linear-gradient(to top left, #ffb003, #ffcb03);
+}
+
+/* background for Loan Operation */
+.operation_loan {
+  background-image: linear-gradient(to top left, #39b385, #9be15d);
+}
+
+/* background for close Operation */
+.operation_close {
+  background-image: linear-gradient(to top left, #e52a5a, #ff585f);
+}
+
+h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.form {
+  display: grid;
+  /* divided the component in the required area through grid  */
+  grid-template-columns: 2.5fr 2.5fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 0.4rem 1rem;
+}
+
+.form.form_loan {
+  grid-template-columns: 2.5fr 1fr 2.5fr;
+}
+
+/* for loan label will be on 2nd row  */
+.form_label_loan {
+  grid-row: 2;
+}
+
+.form_input {
+  width: 100%;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.4);
+  font-family: inherit;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #333;
+  padding: 0.3rem 1rem;
+  border-radius: 0.7rem;
+  transition: all 0.3s;
+}
+
+.form_input:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.form_label {
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.form_btn {
+  border: none;
+  border-radius: 0.7rem;
+  font-size: 1.8rem;
+  background-color: #fff;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.form_btn:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.summary {
+  /* starting at 5th row */
+  grid-row: 5/6;
+  display: flex;
+  align-items: baseline;
+  padding: 0 0.3rem;
+  margin-top: 1rem;
+}
+
+/* applies to summary label */
+.summary_label {
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-right: 0.8rem;
+}
+
+/* applies to summary value  */
+.summary_value {
+  font-size: 2.2rem;
+  margin-right: 2.5rem;
+}
+
+.summary_value_in,
+.summary_value_interest {
+  color: #66c873;
+}
+
+.summary_value_out {
+  color: #f5465d;
+}
+
+.btn_sort {
+  margin-left: auto;
+  border: none;
+  background: none;
+  font-size: 1.3rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.logout_timer {
+  padding: 0 0.3rem;
+  margin-top: 1.9rem;
+  text-align: right;
+  font-size: 1.25rem;
+}
+
+.timer {
+  font-weight: 600;
+}
