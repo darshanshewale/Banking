@@ -30,20 +30,18 @@ Welcome to the **Banking Project**! This project aims to provide a simple bankin
 7. **Transaction Sorting**: 
    - Implement sorting options for the transaction history.
 
-## Installation 🖥️
 
-1. Clone this repository to your local machine.
-2. Install any necessary dependencies (if applicable).
-3. Run the project locally.
-4. 
 # Project Structure 📝
 * index.html: Contains the HTML structure for the project.
 * style.css: Defines the projects’s visual styling.
 * script.js: Implements the project logic using JavaScript.
 
-# Installation
-* Clone this repository to your local machine.
-* Open index.html in your preferred web browser.
+## Installation 🖥️
+
+1. Clone this repository to your local machine.
+2. Install any necessary dependencies (if applicable).
+3. Run the project locally.
+
 
 # Acknowledgments 🎓
 This project is as part of my web development journey. Feel free to explore, modify, and enhance it! 
